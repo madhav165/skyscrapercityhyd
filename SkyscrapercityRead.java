@@ -10,8 +10,9 @@ public class SkyscrapercityRead {
     public static void main(String []args) {
         int lastpagenum;
         int currentlastpage;
+        String home = System.getProperty("user.home");
         try {
-            RWTextFile rwtf = new RWTextFile("/home/madhav/skyscrapercity/finalpage.txt");
+            RWTextFile rwtf = new RWTextFile(home+"/git/skyscrapercityhyd/finalpage.txt");
             lastpagenum = rwtf.getLastPageNum() + 1;            
             Document doc = Jsoup.connect("http://www.skyscrapercity.com/showthread.php?t=459134&page="+lastpagenum).get();
             String title = doc.title();
